@@ -13,3 +13,4 @@
 *sujet d'actalité  
 *materiél(divers materiel)  
 *recette et les depenses de l'agence(payement des fournisseurs, des journalistes). 
+*new agencies can have offshore offices(new claas)
