@@ -12,4 +12,4 @@
 *journaliste independant  
 *sujet d'actalité  
 *materiél(divers materiel)  
-*recette et les depenses de l'agence(payement des fournisseurs, des journalistes).  
+*recette et les depenses de l'agence(payement des fournisseurs, des journalistes). 
