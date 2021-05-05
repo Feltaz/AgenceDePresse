@@ -4,9 +4,9 @@
 using namespace std;
 class Article
 {
-    long idArticle;
-    string titre;
-    string theme;
+    long idArticle;//idArtickle
+    string titre;//titre de l'article
+    string theme;//theme de l'article
 public:
     Article(long i=0,string t="n/a",string th="n/a"):idArticle(i),titre(t),theme(th){}
     ~Article(){}

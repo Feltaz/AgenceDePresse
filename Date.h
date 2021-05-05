@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 using namespace std;
-class Date 
+class Date
 {
     int jour;
     int mois;
@@ -20,17 +20,15 @@ public:
 };
 istream& operator>>(istream& in,Date& d)
 {
-    cout<<"\nSaisir jour: \n";
     in>>d.jour;
-    cout<<"\nSaisir mois: \n";
     in>>d.mois;
-    cout<<"\nSaisir annee: \n";
     in>>d.annee;
+    return in;
 }
 ostream& operator<<(ostream& out,Date& d)
 {
-    out<<"\nAffichage Date\n";
     out<<"\n"<<d.jour<<"/"<<d.mois<<"/"<<d.annee<<"\n";
+    return out;
 }
 Date::Date(int j,int m,int a):jour(j),mois(m),annee(a)
 {}

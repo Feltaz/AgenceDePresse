@@ -4,9 +4,9 @@
 using namespace std;
 class Actualite
 {
-    string theme;
-    Date dateActu;
-    string globalOrLocal;
+    string theme;//theme de l'actualité
+    Date dateActu;//date de l'actualité
+    string globalOrLocal;//permet de savoir si l'actu est globale ou locale
 public:
     Actualite(string ="N/A",Date =(1,1,1111),string="N/A");
     ~Actualite(){}

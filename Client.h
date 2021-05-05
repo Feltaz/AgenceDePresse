@@ -3,9 +3,9 @@
 using namespace std;
 class Client
 {
-    string nom;
-    string prenom;
-    string typeClient;
+    string nom;//nom du client
+    string prenom;//prenom du client
+    string typeClient;//type de client indiv ou business
 public:
     Client(string n="n/a",string p="n/a",string ty="n/a"):nom(n),prenom(p),typeClient(ty){}
     ~Client(){};
