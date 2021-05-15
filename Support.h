@@ -21,5 +21,6 @@ istream& operator>>(istream& in,Support&s)
 {
     in>>s.nom;
     in>>s.adresse;
-    return in;
+    return in;//commentaire
+    
 }
