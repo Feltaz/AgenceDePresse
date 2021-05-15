@@ -1,24 +1,31 @@
 #pragma once
 #include <iostream>
+#include "../classes/Office.h"
+#include "../Functions/actualiteFunctions.h"
 using namespace std;
-void menuActualite(int& choix)
-{
+void menuActualite()
+{   Office o;//creation de l'office NB this should happen at program startup (still working that out )
     bool exit=false;//exit status of the menu
     do 
-    {   int rep;
+    {   int rep;//reponse au menu Actu
         cout<<"\n********Menu Actualité**************\n";
         cout<<"\n1:Afficher les Actualités \n";
         cout<<"\n2:Rechercher une Actualité \n";
         cout<<"\n3:Ajouter une Actualité\n";
         cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
         cin>>rep;
-        if (rep==0) exit=true;
+        switch(rep){
+            case 0:exit=true;break;//exit to main menu
+            case 1:afficherActualite(o);break;//appel fonction affichage des Actualités
+            /*case 2:RechercherActualité();break;
+            case 3:AjouterActualité();break;*/
+        }
     }while(!exit);
 }
-void menuPrincipal(int& choix)
-{   int choice;
+void menuPrincipal()
+{   bool exit=false;//choice to input
     do {
-    int dummyValue=99;
+        int choix;
     string divers[9]={"Actualité","Article","Client","Client Abonné","Journalistes salariés","Journaliste","Materiel","Office","Support"};//tableau pour storer les noms des classes
 do
     {
@@ -33,8 +40,8 @@ do
         
     }while(choix<0||choix>9);
     switch(choix) {
-            case 0:cout<<"\nAu revoir\n";choice=0;break;
-            case 1:menuActualite(dummyValue);
+            case 0:cout<<"\nAu revoir\n";exit=true;break;
+            case 1:menuActualite();
            /* case 2:menuArticle();break;
             case 3:menuClient();break;
             case 4:menuClientAbo();break;
@@ -44,5 +51,5 @@ do
             case 8:menuOffices();break;
             case 9:menuSupport();break;*/
         }
-    }while(choice!=0);
+    }while(!exit);
 }
