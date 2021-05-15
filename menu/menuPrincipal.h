@@ -17,8 +17,8 @@ void menuActualite()
         switch(rep){
             case 0:exit=true;break;//exit to main menu
             case 1:afficherActualite(o);break;//appel fonction affichage des Actualités
-            /*case 2:RechercherActualité();break;
-            case 3:AjouterActualité();break;*/
+            case 2:rechercherActualite(o);break;
+            /*case 3:AjouterActualité();break;*/
         }
     }while(!exit);
 }

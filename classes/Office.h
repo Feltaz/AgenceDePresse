@@ -26,4 +26,5 @@ public:
     friend ostream& operator<<(ostream&,Office&);
     friend istream& operator>>(istream&,Office&);
     friend void afficherActualite(Office&);
+    friend void rechercherActualite(Office&);
 };
