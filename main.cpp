@@ -2,7 +2,6 @@
 #include "menu/menuPrincipal.h"
 using namespace std;
 int main(){
-    int choix;
-    menuPrincipal(choix);
+    menuPrincipal();
     return 0;
 }

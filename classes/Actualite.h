@@ -15,7 +15,7 @@ public:
 };
 ostream& operator<<(ostream& out,Actualite& A)
 {
-    out<<"\ntheme"<<A.theme<<"\n";
+    out<<"\ntheme: "<<A.theme<<"\n";
     out<<"\ndate de l'Actualité:\n";
     out<<A.dateActu;
     out<<"\nglobal ou local?\n"<<A.globalOrLocal<<"\n";

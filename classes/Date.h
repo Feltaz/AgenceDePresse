@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 using namespace std;
-class Date
+class Date 
 {
     int jour;
     int mois;
