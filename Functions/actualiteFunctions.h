@@ -4,9 +4,10 @@
 using namespace std;
 void afficherActualite(Office& o) // can be turned into a template function(something to work on later on )
 {
-    cout<<"\n**********Affichage des Actualité****************************";
+    cout<<"\n**********Debut affichage Affichage****************************";
     for(vector<Actualite>::iterator i=o.tabActu.begin();i!=o.tabActu.end();++i)
         cout<<*i;
+    cout<<"\n************Fin Affichage************************\n";
 }
 void rechercherActualite(Office& o)
 {
