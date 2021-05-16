@@ -2,7 +2,37 @@
 #include <iostream>
 #include "../classes/Office.h"
 #include "../Functions/actualiteFunctions.h"
+#include"../Functions/articleFunctions.h"
 using namespace std;
+void pause()
+{
+    do 
+    {
+        cout << '\n' << "Press a key to continue...";
+        cin.get();
+    } while (cin.get() == '\n');
+}
+void menuArticle()
+{
+    Office o;//creation de l'office NB this should happen at program startup (still working that out )
+    bool exit=false;//exit status of the menu
+    do 
+    {   int rep;//reponse au menu Actu
+        cout<<"\n********Menu Article**************\n";
+        cout<<"\n1:Afficher les Articles \n";
+        cout<<"\n2:Rechercher un Article \n";
+        cout<<"\n3:Ajouter un Article\n";
+        cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
+        cin>>rep;
+        switch(rep){
+            case 0:exit=true;break;//exit to main menu
+            case 1:afficherArticle(o);break;//appel fonction affichage des Actualités
+            case 2:rechercherArticle(o);break;
+            case 3:ajouterArticle(o);break;
+        }
+    pause();
+    }while(!exit);
+}
 void menuActualite()
 {   Office o;//creation de l'office NB this should happen at program startup (still working that out )
     bool exit=false;//exit status of the menu
@@ -18,7 +48,7 @@ void menuActualite()
             case 0:exit=true;break;//exit to main menu
             case 1:afficherActualite(o);break;//appel fonction affichage des Actualités
             case 2:rechercherActualite(o);break;
-            /*case 3:AjouterActualité();break;*/
+            case 3:ajouterActualite(o);break;
         }
     }while(!exit);
 }
@@ -42,8 +72,8 @@ do
     switch(choix) {
             case 0:cout<<"\nAu revoir\n";exit=true;break;
             case 1:menuActualite();
-           /* case 2:menuArticle();break;
-            case 3:menuClient();break;
+            case 2:menuArticle();
+            /*case 3:menuClient();break;
             case 4:menuClientAbo();break;
             case 5:menuJournalistesSalarie();break;
             case 6:menuJournaliste();break;

@@ -4,12 +4,16 @@
 using namespace std;
 class Article
 {
-    long idArticle;//idArtickle
+protected:
+    long idArticle;//idArticle
     string titre;//titre de l'article
     string theme;//theme de l'article
+    string body;
 public:
-    Article(long i=0,string t="n/a",string th="n/a"):idArticle(i),titre(t),theme(th){}
+    Article(long i=0,string t="n/a",string th="n/a",string b="lorem ipsum dolor sit amet "):idArticle(i),titre(t),theme(th),body(b){}
     ~Article(){}
+    string getTitre(){return titre;}
+    long getIdArticle(){return idArticle;}
     friend ostream& operator<<(ostream&,Article&);
     friend istream& operator>>(istream&,Article&);
 };
@@ -21,6 +25,9 @@ ostream& operator<<(ostream& out, Article& a)
     out<<a.titre<<"\n";
     out<<"\ntheme: ";
     out<<a.theme<<"\n";
+    out<<"\nArticle:  \n";
+    out<<a.body<<"\n";
+    out<<"\n-----------Fin Article------------------\n";
     return out;
 }
 istream& operator>>(istream& in, Article& a)
@@ -31,5 +38,8 @@ istream& operator>>(istream& in, Article& a)
     in>>a.titre;
     cout<<"\ntheme: ";
     in>>a.theme;
+    cout<<"\n Ecrire l'Article:   \n";
+    in.ignore();
+    getline(in,a.body);
     return in;
 }

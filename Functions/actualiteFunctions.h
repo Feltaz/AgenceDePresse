@@ -34,3 +34,16 @@ void rechercherActualite(Office& o)
         cout<<"\nActualité non trouvée\n";
         }
 }
+void ajouterActualite(Office& o) 
+{
+    std::cout<<"\n+++++++++++++++++++Debut Ajout d'Actualité+++++++++++++++++++\n";
+    char rep='n';
+    do{
+        Actualite a;
+        cin>>a;
+        o.tabActu.push_back(a);
+        std::cout<<"\nVoulez Vous saisir encore?: \n";//prompt for more user input
+        cin>>rep; //answer input 
+        }while(rep=='o' || rep=='O');
+    cout<<"\n++++++++++++++++++++++++Fin Ajout d'Actualité+++++++++++++++++++++++++++++++++++++\n";
+}
