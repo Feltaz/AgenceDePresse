@@ -3,7 +3,8 @@
 #include <vector>
 #include "Actualite.h"
 #include "Article.h"
-#include "Client.h"
+#include "ClientAbo.h"
+#include "Journaliste_salarie.h"
 using namespace std;
 class Office 
 {
@@ -14,7 +15,8 @@ protected:
     string typeAgence;
     vector<Actualite> tabActu;
     vector<Article> tabArti;
-    vector<Client> tabClient; 
+    vector<Client*> tabClient;
+    vector<Journaliste*> tabJournal;
    // static int counter=0;//counter to count how many offices exist within the press agency
 public:
     Office(long id=0,string n="n/a",string addr="n/a",string t="n/A"):idOffice(id),nom(n),adresse(addr),typeAgence(t){}
@@ -26,8 +28,15 @@ public:
     friend void ajouterActualite(Office& ); 
     friend void afficherArticle(Office&);
     friend void rechercherArticle(Office&);
-    friend void ajouterArticle(Office& ); 
+    friend void ajouterArticle(Office& );
+    // 
     friend void afficherClient(Office& );
     friend void rechercherClient(Office& );
-    friend void ajouterClient(Office& ); 
+    friend void ajouterClient(Office& );
+    // 
+    friend void afficherJournaliste(Office& );
+    friend void rechercherJournaliste(Office& );
+    friend void ajouterJournaliste(Office& ); 
+    //
+    
 };

@@ -8,6 +8,7 @@ class ClientAbo: public Client
 public:
     ClientAbo(long id=0,string n="n/a",string p="n/a",string ty="n/a",int dur=0,string tya="n/a"):Client(id,n,p,ty),dureeMois(dur),typeAbo(tya){}//need to call the parent class' constructor (define it first)
     ~ClientAbo(){}
+    ClientAbo(const Client &clt) : Client(clt) {}
     friend ostream& operator<<(ostream&,ClientAbo&);
     friend istream& operator>>(istream&,ClientAbo&);
 };
