@@ -5,13 +5,22 @@
 #include"../Functions/articleFunctions.h"
 #include "../Functions/clientFunctions.h"
 using namespace std;
-void pause()
+void pause()//function to pause 
 {
     do 
     {
         cout << '\n' << "Press a key to continue...";
         cin.get();
     } while (cin.get() == '\n');
+}
+void menuClientAbo(Office& o)
+{
+    bool exit=false;
+    do 
+    {
+        int rep;
+
+    }while(!exit);
 }
 void menuClient(Office& o)
 {
@@ -28,13 +37,13 @@ void menuClient(Office& o)
         cin>>rep;
         switch(rep){
             case 0:exit=true;break;//exit to main menu
-            case 1:afficherClient(o);break;//appel fonction affichage des Actualités
-            case 2:rechercherClient(o);break;
-            case 3:ajouterClient(o);break;
+            case 1:afficherClient(o);pause();break;//appel fonction affichage des Actualités
+            case 2:rechercherClient(o);pause();break;
+            case 3:ajouterClient(o);pause();break;
             /*case 4:menuClientAbo()*/
         }
     } while (!exit);
-    pause();
+    
     
 }
 void menuArticle(Office& o)
@@ -51,11 +60,11 @@ void menuArticle(Office& o)
         cin>>rep;
         switch(rep){
             case 0:exit=true;break;//exit to main menu
-            case 1:afficherArticle(o);break;//appel fonction affichage des Actualités
-            case 2:rechercherArticle(o);break;
-            case 3:ajouterArticle(o);break;
+            case 1:afficherArticle(o);pause();break;//appel fonction affichage des Actualités
+            case 2:rechercherArticle(o);pause();break;
+            case 3:ajouterArticle(o);pause();break;
         }
-    pause();
+    
     }while(!exit);
 }
 void menuActualite(Office& o)
@@ -71,9 +80,9 @@ void menuActualite(Office& o)
         cin>>rep;
         switch(rep){
             case 0:exit=true;break;//exit to main menu
-            case 1:afficherActualite(o);break;//appel fonction affichage des Actualités
-            case 2:rechercherActualite(o);break;
-            case 3:ajouterActualite(o);break;
+            case 1:afficherActualite(o);pause();break;//appel fonction affichage des Actualités
+            case 2:rechercherActualite(o);pause();break;
+            case 3:ajouterActualite(o);pause();break;
         }
     }while(!exit);
 }
