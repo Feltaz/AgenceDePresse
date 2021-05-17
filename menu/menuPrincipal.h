@@ -3,8 +3,9 @@
 #include "../classes/Office.h"
 #include "../Functions/actualiteFunctions.h"
 #include"../Functions/articleFunctions.h"
+#include "../Functions/clientFunctions.h"
 using namespace std;
-void pause()
+void pause()//function to pause 
 {
     do 
     {
@@ -12,9 +13,42 @@ void pause()
         cin.get();
     } while (cin.get() == '\n');
 }
-void menuArticle()
+void menuClientAbo(Office& o)
 {
-    Office o;//creation de l'office NB this should happen at program startup (still working that out )
+    bool exit=false;
+    do 
+    {
+        int rep;
+
+    }while(!exit);
+}
+void menuClient(Office& o)
+{
+    bool exit=false;
+    do
+    {
+        int rep;
+        cout<<"\n********Menu Client**************\n";
+        cout<<"\n1:Afficher les Clients \n";
+        cout<<"\n2:Rechercher un Clients \n";
+        cout<<"\n3:Ajouter un Clients\n";
+        cout<<"\n4:Acceder au menu Clients Abonnés";
+        cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
+        cin>>rep;
+        switch(rep){
+            case 0:exit=true;break;//exit to main menu
+            case 1:afficherClient(o);pause();break;//appel fonction affichage des Actualités
+            case 2:rechercherClient(o);pause();break;
+            case 3:ajouterClient(o);pause();break;
+            /*case 4:menuClientAbo()*/
+        }
+    } while (!exit);
+    
+    
+}
+void menuArticle(Office& o)
+{
+    ;//creation de l'office NB this should happen at program startup (still working that out )
     bool exit=false;//exit status of the menu
     do 
     {   int rep;//reponse au menu Actu
@@ -26,15 +60,15 @@ void menuArticle()
         cin>>rep;
         switch(rep){
             case 0:exit=true;break;//exit to main menu
-            case 1:afficherArticle(o);break;//appel fonction affichage des Actualités
-            case 2:rechercherArticle(o);break;
-            case 3:ajouterArticle(o);break;
+            case 1:afficherArticle(o);pause();break;//appel fonction affichage des Actualités
+            case 2:rechercherArticle(o);pause();break;
+            case 3:ajouterArticle(o);pause();break;
         }
-    pause();
+    
     }while(!exit);
 }
-void menuActualite()
-{   Office o;//creation de l'office NB this should happen at program startup (still working that out )
+void menuActualite(Office& o)
+{  
     bool exit=false;//exit status of the menu
     do 
     {   int rep;//reponse au menu Actu
@@ -46,13 +80,13 @@ void menuActualite()
         cin>>rep;
         switch(rep){
             case 0:exit=true;break;//exit to main menu
-            case 1:afficherActualite(o);break;//appel fonction affichage des Actualités
-            case 2:rechercherActualite(o);break;
-            case 3:ajouterActualite(o);break;
+            case 1:afficherActualite(o);pause();break;//appel fonction affichage des Actualités
+            case 2:rechercherActualite(o);pause();break;
+            case 3:ajouterActualite(o);pause();break;
         }
     }while(!exit);
 }
-void menuPrincipal()
+void menuPrincipal(Office& o)
 {   bool exit=false;//choice to input
     do {
         int choix;
@@ -71,10 +105,10 @@ do
     }while(choix<0||choix>9);
     switch(choix) {
             case 0:cout<<"\nAu revoir\n";exit=true;break;
-            case 1:menuActualite();
-            case 2:menuArticle();
-            /*case 3:menuClient();break;
-            case 4:menuClientAbo();break;
+            case 1:menuActualite(o);break;
+            case 2:menuArticle(o);break;
+            case 3:menuClient(o);break;
+            /*case 4:menuClientAbo();break;
             case 5:menuJournalistesSalarie();break;
             case 6:menuJournaliste();break;
             case 7:menuMateriel();break;
