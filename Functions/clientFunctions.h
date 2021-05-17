@@ -6,8 +6,9 @@ void afficherClient(Office& o) // can be turned into a template function(somethi
     cout<<"\n**********Affichage des Clients****************************";
     for(int i=0;i<o.tabClient.size();i++)
         {
-            if(typeid(*o.tabClient[i])==typeid(Client))cout<<*(o.tabClient[i]);
-            else if (typeid(*o.tabClient[i])==typeid(ClientAbo)) cout<<static_cast<ClientAbo&>(*o.tabClient[i]);
+            if (typeid(*o.tabClient[i])==typeid(ClientAbo)) cout<<static_cast<ClientAbo&>(*o.tabClient[i]);
+            else if(typeid(*o.tabClient[i])==typeid(Client))cout<<*(o.tabClient[i]);
+            
         }
     cout<<"\n------------------------Fin Affichage des Clients-----------";
 }
