@@ -8,7 +8,8 @@ class Materiel
     string nomMat;
 public:
     Materiel(long =0,long =0,string ="*****");
-    ~Materiel();
+    ~Materiel(){}
+    long getIdMateriel(){return idMat;} 
     friend ostream& operator<<(ostream&,Materiel&);
     friend istream& operator>>(istream&,Materiel&);
 };
@@ -16,15 +17,21 @@ Materiel::Materiel(long i,long ref,string nom):idMat(i),reference(ref),nomMat(no
 {}
 ostream& operator<<(ostream& out, Materiel& m)
 {
-    out<<m.idMat;
-    out<<m.reference;
-    out<<m.nomMat;
+    cout<<"\nID du materiel:  ";
+    out<<m.idMat<<"\n";
+    cout<<"\nReference du materiel:   ";
+    out<<m.reference<<"\n";
+    cout<<"\nNom du matériel:  ";
+    out<<m.nomMat<<"\n";
     return out;
 }
 istream& operator>>(istream& in, Materiel& m)
 {
+    cout<<"\nID du materiel:\n";
     in>>m.idMat;
+    cout<<"\nReference du materiel:\n  ";
     in>>m.reference;
+    cout<<"\nNom du matériel:\n";
     in>>m.nomMat;
     return in;
 }

@@ -5,6 +5,7 @@
 #include"../Functions/articleFunctions.h"
 #include "../Functions/clientFunctions.h"
 #include "../Functions/journalisteFunctions.h"
+#include "../Functions/materielFunctions.h"
 using namespace std;
 void pause()//function to pause 
 {
@@ -13,6 +14,26 @@ void pause()//function to pause
         cout << '\n' << "Press a key to continue...";
         cin.get();
     } while (cin.get() == '\n');
+}
+void menuMateriel(Office& o)
+{
+    bool exit=false;//exit status of the menu
+    do 
+    {   int rep;//reponse au menu Materiel
+        cout<<"\n********Menu Materiel**************\n";
+        cout<<"\n1:Afficher  Materiels \n";
+        cout<<"\n2:Rechercher du Materiel \n";
+        cout<<"\n3:Ajouter du Materiel\n";
+        cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
+        cin>>rep;
+        switch(rep){
+            case 0:exit=true;break;//exit to main menu
+            case 1:afficherMateriel(o);pause();break;//appel fonction affichage des Actualités
+            case 2:rechercherMateriel(o);pause();break;
+            case 3:ajouterMateriel(o);pause();break;
+        }
+    
+    }while(!exit);
 }
 void menuJournaliste(Office& o)
 {
@@ -71,7 +92,7 @@ void menuClient(Office& o)
 }
 void menuArticle(Office& o)
 {
-    ;//creation de l'office NB this should happen at program startup (still working that out )
+    //creation de l'office NB this should happen at program startup (still working that out )
     bool exit=false;//exit status of the menu
     do 
     {   int rep;//reponse au menu Actu
@@ -113,11 +134,11 @@ void menuPrincipal(Office& o)
 {   bool exit=false;//choice to input
     do {
         int choix;
-    string divers[9]={"Actualité","Article","Client","Client Abonné","Journalistes ","Journalistes salariés","Materiel","Office","Support"};//tableau pour storer les noms des classes
+    string divers[9]={"Actualité","Article","Client","Journalistes ","Materiel","Office","Support"};//tableau pour storer les noms des classes
 do
     {
         cout<<"\n************bienvenue au menu principal****************\n ";
-        for(int i=0;i<9;i++)
+        for(int i=0;i<7;i++)
         {
             cout<<"\n"<<i+1<<" Acceder au menu "<<divers[i]<<": \n";
         }
@@ -131,12 +152,12 @@ do
             case 1:menuActualite(o);break;
             case 2:menuArticle(o);break;
             case 3:menuClient(o);break;
-            //case 4:menuClientAbo();break;
-            case 5:menuJournaliste(o);break;
+            case 4:menuJournaliste(o);break;
+            case 5:menuMateriel(o);break;
             /*case 5:menuJournalistesSalarie();break;
-            case 7:menuMateriel();break;
+            
             case 8:menuOffices();break;
-            case 9:menuSupport();break;*/
+            case 9:menuSupport();break;*/ //case 4:menuClientAbo();break;
         }
     }while(!exit);
 }
