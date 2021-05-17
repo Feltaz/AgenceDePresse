@@ -13,7 +13,7 @@ void pause()//function to pause
         cin.get();
     } while (cin.get() == '\n');
 }
-void menuClientAbo(Office& o)
+/*void menuClientAbo(Office& o)
 {
     bool exit=false;
     do 
@@ -21,7 +21,7 @@ void menuClientAbo(Office& o)
         int rep;
 
     }while(!exit);
-}
+}*/
 void menuClient(Office& o)
 {
     bool exit=false;
@@ -40,7 +40,7 @@ void menuClient(Office& o)
             case 1:afficherClient(o);pause();break;//appel fonction affichage des Actualités
             case 2:rechercherClient(o);pause();break;
             case 3:ajouterClient(o);pause();break;
-            /*case 4:menuClientAbo()*/
+            /*case 4:menuClientAbo(o)*/
         }
     } while (!exit);
     
@@ -90,7 +90,7 @@ void menuPrincipal(Office& o)
 {   bool exit=false;//choice to input
     do {
         int choix;
-    string divers[9]={"Actualité","Article","Client","Client Abonné","Journalistes salariés","Journaliste","Materiel","Office","Support"};//tableau pour storer les noms des classes
+    string divers[9]={"Actualité","Article","Client","Client Abonné","Journalistes ","Journalistes salariés","Materiel","Office","Support"};//tableau pour storer les noms des classes
 do
     {
         cout<<"\n************bienvenue au menu principal****************\n ";
