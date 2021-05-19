@@ -6,8 +6,11 @@ class Support
     string nom;
     string adresse;
 public:
-    Support(string n="n/a",string add="n/a"):nom(n),adresse(add){}
-    ~Support();
+    static int count;
+    static int getCount(){return count;}
+    static void setCount(int ct){count=ct;}
+    Support(string n="n/a",string add="n/a"):nom(n),adresse(add){count++;}
+    ~Support(){count--;}
     friend ostream& operator<<(ostream&,Support&);
     friend istream& operator>>(istream&,Support&);
 };

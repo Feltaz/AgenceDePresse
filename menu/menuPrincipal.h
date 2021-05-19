@@ -24,13 +24,16 @@ void menuMateriel(Office& o)
         cout<<"\n1:Afficher  Materiels \n";
         cout<<"\n2:Rechercher du Materiel \n";
         cout<<"\n3:Ajouter du Materiel\n";
+        cout<<"\n4:Afficher le nombre du Materiel\n";
         cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
+
         cin>>rep;
         switch(rep){
             case 0:exit=true;break;//exit to main menu
             case 1:afficherMateriel(o);pause();break;//appel fonction affichage des Actualités
             case 2:rechercherMateriel(o);pause();break;
             case 3:ajouterMateriel(o);pause();break;
+            case 4:cout<<"\nle nombre est: "<<Materiel::getCount()<<endl;pause();break;
         }
     
     }while(!exit);
@@ -45,7 +48,7 @@ void menuJournaliste(Office& o)
         cout<<"\n1:Afficher les Journaliste \n";
         cout<<"\n2:Rechercher un Journaliste \n";
         cout<<"\n3:Ajouter un Journaliste\n";
-        cout<<"\n4:Acceder au menu Journaliste Abonnés";
+        cout<<"\n4:Afficher le nombre de Journaliste\n";
         cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
         cin>>rep;
         switch(rep){
@@ -53,19 +56,10 @@ void menuJournaliste(Office& o)
             case 1:afficherJournaliste(o);pause();break;//appel fonction affichage des Actualités
             case 2:rechercherJournaliste(o);pause();break;
             case 3:ajouterJournaliste(o);pause();break;
-            /*case 4:menuJournaliste salarié(o)*/
+            case 4:cout<<"\nle nombre est: "<<Journaliste::getCount()<<endl;pause();break;
         }
     } while (!exit);
 }
-/*void menuClientAbo(Office& o)
-{
-    bool exit=false;
-    do 
-    {
-        int rep;
-
-    }while(!exit);
-}*/
 void menuClient(Office& o)
 {
     bool exit=false;
@@ -76,7 +70,7 @@ void menuClient(Office& o)
         cout<<"\n1:Afficher les Clients \n";
         cout<<"\n2:Rechercher un Clients \n";
         cout<<"\n3:Ajouter un Clients\n";
-        cout<<"\n4:Acceder au menu Clients Abonnés";
+        cout<<"\n4:Afficher le nombre de Client\n";
         cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
         cin>>rep;
         switch(rep){
@@ -84,7 +78,7 @@ void menuClient(Office& o)
             case 1:afficherClient(o);pause();break;//appel fonction affichage des Actualités
             case 2:rechercherClient(o);pause();break;
             case 3:ajouterClient(o);pause();break;
-            /*case 4:menuClientAbo(o)*/
+            case 4:cout<<"\nle nombre est: "<<Client::getCount()<<endl;pause();break;
         }
     } while (!exit);
     
@@ -100,6 +94,7 @@ void menuArticle(Office& o)
         cout<<"\n1:Afficher les Articles \n";
         cout<<"\n2:Rechercher un Article \n";
         cout<<"\n3:Ajouter un Article\n";
+        cout<<"\n4:Afficher le nombre d'Article\n";
         cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
         cin>>rep;
         switch(rep){
@@ -107,6 +102,7 @@ void menuArticle(Office& o)
             case 1:afficherArticle(o);pause();break;//appel fonction affichage des Actualités
             case 2:rechercherArticle(o);pause();break;
             case 3:ajouterArticle(o);pause();break;
+            case 4:cout<<"\nle nombre est: "<<Article::getCount()<<endl;pause();break;
         }
     
     }while(!exit);
@@ -120,6 +116,7 @@ void menuActualite(Office& o)
         cout<<"\n1:Afficher les Actualités \n";
         cout<<"\n2:Rechercher une Actualité \n";
         cout<<"\n3:Ajouter une Actualité\n";
+        cout<<"\n4:Afficher le nombre d'Actualité\n";
         cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
         cin>>rep;
         switch(rep){
@@ -127,6 +124,7 @@ void menuActualite(Office& o)
             case 1:afficherActualite(o);pause();break;//appel fonction affichage des Actualités
             case 2:rechercherActualite(o);pause();break;
             case 3:ajouterActualite(o);pause();break;
+            case 4:cout<<"\nle nombre est: "<<Actualite::getCount()<<endl;pause();break;
         }
     }while(!exit);
 }

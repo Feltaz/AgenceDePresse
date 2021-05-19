@@ -40,9 +40,9 @@ void ajouterActualite(Office& o)
     std::cout<<"\n+++++++++++++++++++Debut Ajout d'Actualité+++++++++++++++++++\n";
     char rep='n';
     do{
-        Actualite a;
-        cin>>a;
-        o.tabActu.push_back(a);
+        Actualite*a=new Actualite;
+        cin>>*a;
+        o.tabActu.push_back(*a);
         std::cout<<"\nVoulez Vous saisir encore?: \n";//prompt for more user input
         cin>>rep; //answer input 
         }while(rep=='o' || rep=='O');

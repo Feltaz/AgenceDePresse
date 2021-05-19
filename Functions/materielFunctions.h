@@ -34,9 +34,9 @@ void ajouterMateriel(Office& o)
     std::cout<<"\n+++++++++++++++++++Debut Ajout Matériel+++++++++++++++++++\n";
     char rep='n';
     do{
-        Materiel mat;
-        cin>>mat;
-        o.tabMateriel.push_back(mat);
+        Materiel* mat=new Materiel;
+        cin>>*mat;
+        o.tabMateriel.push_back(*mat);
         std::cout<<"\nVoulez Vous saisir encore?: \n";//prompt for more user input
         cin>>rep; //answer input 
         }while(rep=='o' || rep=='O');
