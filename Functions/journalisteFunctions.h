@@ -53,3 +53,23 @@ void ajouterJournaliste(Office& o)
         }while(rep=='o' || rep=='O');
     cout<<"\n++++++++++++++++++++++++Fin Ajout du Journaliste+++++++++++++++++++++++++++++++++++++\n";
 }
+void supprimerJournaliste(Office& o)
+{
+    int id;
+    bool found=false;
+    int i=0;
+    cout<<"\nentrez l'id pour supprimer:\n";
+    cin>>id;
+    while(!found)
+    {
+        if(o.tabJournal[i]->getIdJournaliste()==id)
+            {
+                delete o.tabJournal[i];
+                o.tabJournal.erase(o.tabJournal.begin()+i);
+                found=true;}
+        if (i>(o.tabJournal.size()))
+            break;
+        i++;
+        continue;
+    }
+}

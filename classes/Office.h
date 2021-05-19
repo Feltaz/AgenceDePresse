@@ -29,20 +29,25 @@ public:
     ~Office(){count--;}
     friend ostream& operator<<(ostream&,Office&);
     friend istream& operator>>(istream&,Office&);
+    //
     friend void afficherActualite(Office&);
     friend void rechercherActualite(Office&);
-    friend void ajouterActualite(Office& ); 
+    friend void ajouterActualite(Office& );
+    //
     friend void afficherArticle(Office&);
     friend void rechercherArticle(Office&);
     friend void ajouterArticle(Office& );
+    friend void supprimerArticle(Office&);
     // 
     friend void afficherClient(Office& );
     friend void rechercherClient(Office& );
     friend void ajouterClient(Office& );
+    friend void supprimerClient(Office&);
     // 
     friend void afficherJournaliste(Office& );
     friend void rechercherJournaliste(Office& );
-    friend void ajouterJournaliste(Office& ); 
+    friend void ajouterJournaliste(Office& );
+    friend void supprimerJournaliste(Office&);
     //
     friend void afficherMateriel(Office& );
     friend void rechercherMateriel(Office& );

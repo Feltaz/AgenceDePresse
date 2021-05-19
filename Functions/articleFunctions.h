@@ -41,3 +41,22 @@ void ajouterArticle(Office& o)
         }while(rep=='o' || rep=='O');
     cout<<"\n++++++++++++++++++++++++Fin Ajout d'Article+++++++++++++++++++++++++++++++++++++\n";
 }
+
+void supprimerArticle(Office& o)
+{
+    int id;
+    bool found=false;
+    int i=0;
+    cout<<"\nentrez l'id pour supprimer:\n";
+    cin>>id;
+    while(!found)
+    {
+        if(o.tabArti[i].getIdArticle()==id)
+            {o.tabArti.erase(o.tabArti.begin()+i);
+            found=true;}
+        if (i>(o.tabArti.size()))
+            break;
+        i++;
+        continue;
+    }
+}
