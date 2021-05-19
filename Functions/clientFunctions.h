@@ -52,3 +52,23 @@ void ajouterClient(Office& o)
         }while(rep=='o' || rep=='O');
     cout<<"\n++++++++++++++++++++++++Fin Ajout du Client+++++++++++++++++++++++++++++++++++++\n";
 }
+void supprimerClient(Office& o)
+{
+    int id;
+    bool found=false;
+    int i=0;
+    cout<<"\nentrez l'id pour supprimer:\n";
+    cin>>id;
+    while(!found)
+    {
+        if(o.tabClient[i]->getIdClient()==id)
+            {
+                delete o.tabClient[i];
+                o.tabClient.erase(o.tabClient.begin()+i);
+                found=true;}
+        if (i>(o.tabClient.size()))
+            break;
+        i++;
+        continue;
+    }
+}

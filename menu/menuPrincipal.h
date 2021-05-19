@@ -49,6 +49,7 @@ void menuJournaliste(Office& o)
         cout<<"\n2:Rechercher un Journaliste \n";
         cout<<"\n3:Ajouter un Journaliste\n";
         cout<<"\n4:Afficher le nombre de Journaliste\n";
+        cout<<"\n5:Supprimer un Journaliste\n";
         cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
         cin>>rep;
         switch(rep){
@@ -57,6 +58,7 @@ void menuJournaliste(Office& o)
             case 2:rechercherJournaliste(o);pause();break;
             case 3:ajouterJournaliste(o);pause();break;
             case 4:cout<<"\nle nombre est: "<<Journaliste::getCount()<<endl;pause();break;
+            case 5:supprimerJournaliste(o);pause();break;
         }
     } while (!exit);
 }
@@ -71,6 +73,7 @@ void menuClient(Office& o)
         cout<<"\n2:Rechercher un Clients \n";
         cout<<"\n3:Ajouter un Clients\n";
         cout<<"\n4:Afficher le nombre de Client\n";
+        cout<<"\n5: Supprimmer  un Client\n";
         cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
         cin>>rep;
         switch(rep){
@@ -79,6 +82,7 @@ void menuClient(Office& o)
             case 2:rechercherClient(o);pause();break;
             case 3:ajouterClient(o);pause();break;
             case 4:cout<<"\nle nombre est: "<<Client::getCount()<<endl;pause();break;
+            case 5:supprimerClient(o);pause();break;
         }
     } while (!exit);
     
@@ -95,6 +99,7 @@ void menuArticle(Office& o)
         cout<<"\n2:Rechercher un Article \n";
         cout<<"\n3:Ajouter un Article\n";
         cout<<"\n4:Afficher le nombre d'Article\n";
+        cout<<"\n5: Supprimer  un Article\n";
         cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
         cin>>rep;
         switch(rep){
@@ -103,6 +108,7 @@ void menuArticle(Office& o)
             case 2:rechercherArticle(o);pause();break;
             case 3:ajouterArticle(o);pause();break;
             case 4:cout<<"\nle nombre est: "<<Article::getCount()<<endl;pause();break;
+            case 5:supprimerArticle(o);pause();break;
         }
     
     }while(!exit);
@@ -146,7 +152,7 @@ do
         
     }while(choix<0||choix>9);
     switch(choix) {
-            case 0:cout<<"\nAu revoir\n";exit=true;break;
+            case 0:cout<<"\nAu revoir à la prochaine\n";exit=true;break;
             case 1:menuActualite(o);break;
             case 2:menuArticle(o);break;
             case 3:menuClient(o);break;
