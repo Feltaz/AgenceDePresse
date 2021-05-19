@@ -48,3 +48,22 @@ void ajouterActualite(Office& o)
         }while(rep=='o' || rep=='O');
     cout<<"\n++++++++++++++++++++++++Fin Ajout d'Actualité+++++++++++++++++++++++++++++++++++++\n";
 }
+
+void supprimerActualite(Office& o)
+{
+    int id;
+    bool found=false;
+    int i=0;
+    cout<<"\nentrez l'id pour supprimer:\n";
+    cin>>id;
+    while(!found)
+    {
+        if(o.tabActu[i].getIdActualite()==id)
+            {o.tabActu.erase(o.tabActu.begin()+i);
+            found=true;}
+        if (i>(o.tabActu.size()))
+            break;
+        i++;
+        continue;
+    }
+}
