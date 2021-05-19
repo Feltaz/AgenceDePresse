@@ -38,7 +38,7 @@ istream& operator>>(istream& in,Support&s)
     cout<<"\nAdresse du support\n";
     in>>s.adresse;
     cout<<"\ntype du support:\n";
-    in>>s.idSupport;
+    in>>s.typeDeSupport;
     return in;//commentaire
     
 }

@@ -20,6 +20,7 @@ protected:
     vector<Client*> tabClient;
     vector<Journaliste*> tabJournal;
     vector<Materiel> tabMateriel;
+    vector<Support> tabSupp;
    // static int counter=0;//counter to count how many offices exist within the press agency
 public:
     static int count;
@@ -33,6 +34,7 @@ public:
     friend void afficherActualite(Office&);
     friend void rechercherActualite(Office&);
     friend void ajouterActualite(Office& );
+    friend void supprimerActualite(Office& );
     //
     friend void afficherArticle(Office&);
     friend void rechercherArticle(Office&);
@@ -53,5 +55,10 @@ public:
     friend void rechercherMateriel(Office& );
     friend void ajouterMateriel(Office& );
     friend void supprimerMateriel(Office&);
+    //
+    friend void afficherSupport(Office& );
+    friend void rechercherSupport(Office& );
+    friend void ajouterSupport(Office& );
+    friend void supprimerSupport(Office&);
 
 };
