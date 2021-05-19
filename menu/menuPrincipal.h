@@ -25,6 +25,7 @@ void menuMateriel(Office& o)
         cout<<"\n2:Rechercher du Materiel \n";
         cout<<"\n3:Ajouter du Materiel\n";
         cout<<"\n4:Afficher le nombre du Materiel\n";
+        cout<<"\n5:Supprimer du Materiel\n";
         cout<<"\nappuyer sur 0 pour revenir au menu Principal\n";
 
         cin>>rep;
@@ -34,6 +35,7 @@ void menuMateriel(Office& o)
             case 2:rechercherMateriel(o);pause();break;
             case 3:ajouterMateriel(o);pause();break;
             case 4:cout<<"\nle nombre est: "<<Materiel::getCount()<<endl;pause();break;
+            case 5:supprimerMateriel(o);pause();break;
         }
     
     }while(!exit);

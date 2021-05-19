@@ -42,3 +42,22 @@ void ajouterMateriel(Office& o)
         }while(rep=='o' || rep=='O');
     cout<<"\n++++++++++++++++++++++++Fin Ajout Matériel+++++++++++++++++++++++++++++++++++++\n";
 }
+
+void supprimerMateriel(Office& o)
+{
+    int id;
+    bool found=false;
+    int i=0;
+    cout<<"\nentrez l'id pour supprimer:\n";
+    cin>>id;
+    while(!found)
+    {
+        if(o.tabMateriel[i].getIdMateriel()==id)
+            {o.tabMateriel.erase(o.tabMateriel.begin()+i);
+            found=true;}
+        if (i>(o.tabMateriel.size()))
+            break;
+        i++;
+        continue;
+    }
+}

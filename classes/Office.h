@@ -52,5 +52,6 @@ public:
     friend void afficherMateriel(Office& );
     friend void rechercherMateriel(Office& );
     friend void ajouterMateriel(Office& );
+    friend void supprimerMateriel(Office&);
 
 };
