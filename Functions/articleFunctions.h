@@ -33,9 +33,9 @@ void ajouterArticle(Office& o)
     std::cout<<"\n+++++++++++++++++++Debut Ajout d'Article+++++++++++++++++++\n";
     char rep='n';
     do{
-        Article a;
-        cin>>a;
-        o.tabArti.push_back(a);
+        Article* a=new Article;
+        cin>>*a;
+        o.tabArti.push_back(*a);
         std::cout<<"\nVoulez Vous saisir encore?: \n";//prompt for more user input
         cin>>rep; //answer input 
         }while(rep=='o' || rep=='O');

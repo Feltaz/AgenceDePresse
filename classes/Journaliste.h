@@ -12,8 +12,11 @@ protected:
     string paysDeService;
     string nationalite;
 public:
-    Journaliste(long id=0,string p="n/a",string n="n/a",string exp="n/a",string pays="n/a",string nat="n/a"):idJournaliste(id),prenom(p),nom(n),expertise(exp),paysDeService(pays),nationalite(nat) {}
-    ~Journaliste(){}
+    static int count;//compteur des instances
+    static int getCount(){return count;}//compteur des instances
+    static void setCount(int ct){count=ct;}//compteur des instances
+    Journaliste(long id=0,string p="n/a",string n="n/a",string exp="n/a",string pays="n/a",string nat="n/a"):idJournaliste(id),prenom(p),nom(n),expertise(exp),paysDeService(pays),nationalite(nat) {count++;}
+    ~Journaliste(){count--;}
     long getIdJournaliste() {return idJournaliste;}
     friend ostream& operator<<(ostream&,Journaliste&);
     friend istream& operator>>(istream&,Journaliste&);

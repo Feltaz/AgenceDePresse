@@ -8,8 +8,11 @@ class Client
     string prenom;//prenom du client
     string typeClient;//type de client indiv ou business
 public:
-    Client(long id=0,string n="n/a",string p="n/a",string ty="n/a"):idClient(id),nom(n),prenom(p),typeClient(ty){}
-    ~Client(){};
+    static int count;
+    static int getCount(){return count;}
+    static void setCount(int ct){count=ct;}
+    Client(long id=0,string n="n/a",string p="n/a",string ty="n/a"):idClient(id),nom(n),prenom(p),typeClient(ty){count++;}
+    ~Client(){count--;}
     long getIdClient(){return idClient;}
     friend ostream& operator<<(ostream&,Client&);
     friend istream& operator>>(istream&,Client&);

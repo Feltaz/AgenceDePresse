@@ -10,8 +10,11 @@ protected:
     string theme;//theme de l'article
     string body;
 public:
-    Article(long i=0,string t="n/a",string th="n/a",string b="lorem ipsum dolor sit amet "):idArticle(i),titre(t),theme(th),body(b){}
-    ~Article(){}
+    static int count;
+    static int getCount(){return count;}
+    static void setCount(int ct){count=ct;}
+    Article(long i=0,string t="n/a",string th="n/a",string b="lorem ipsum dolor sit amet "):idArticle(i),titre(t),theme(th),body(b){count++;}
+    ~Article(){count--;}
     string getTitre(){return titre;}
     long getIdArticle(){return idArticle;}
     friend ostream& operator<<(ostream&,Article&);
