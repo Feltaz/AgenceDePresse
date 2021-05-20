@@ -7,6 +7,7 @@
 #include "Journaliste_salarie.h"
 #include "Materiel.h"
 #include "Support.h"
+#include <fstream>
 using namespace std;
 class Office 
 {
@@ -14,7 +15,6 @@ protected:
     long idOffice;
     string nom;
     string adresse;
-    string typeAgence;
     vector<Actualite> tabActu;
     vector<Article> tabArti;
     vector<Client*> tabClient;
@@ -26,8 +26,15 @@ public:
     static int count;
     static int getCount(){return count;}
     static void setCount(int ct){count=ct;}
-    Office(long id=0,string n="n/a",string addr="n/a",string t="n/A"):idOffice(id),nom(n),adresse(addr),typeAgence(t){count++;}
+    static void createFile(fstream&f){
+         f.open("Office.bin",ios::in | ios::out |ios::trunc |ios::binary );
+        if (!f.is_open()) exit (-1) ;}
+    static void creer(fstream& );
+    //static void remplir(fstream& );
+    static void afficher(fstream& ); 
+    Office(long id=0,string n="n/a",string addr="n/a"):idOffice(id),nom(n),adresse(addr){count++;}
     ~Office(){count--;}
+    long getIdOffice(){return idOffice;}
     friend ostream& operator<<(ostream&,Office&);
     friend istream& operator>>(istream&,Office&);
     //
@@ -60,5 +67,30 @@ public:
     friend void rechercherSupport(Office& );
     friend void ajouterSupport(Office& );
     friend void supprimerSupport(Office&);
-
+    //
+    template <typename T>
+    void afficher(vector<T> a) {
+        for(int i=0;i<a.size();i++)
+            cout<<a[i];
+    }
 };
+ostream& operator<<(ostream& out,Office& o)
+{
+    out<<"\nid:   "<<o.idOffice<<endl;
+    out<<"\nnom:  "<<o.nom<<endl;
+    out<<"\nAddresse"<<o.adresse<<endl;
+}
+istream& operator>>(istream& in,Office& o)
+{
+    cout<<"\nid:   ";
+    in>>o.idOffice;
+    cout<<"\nnom:  ";
+    in>>o.nom;
+    cout<<"\nadresse:   ";
+    in>>o.adresse;
+}
+void Office::creer(fstream& f) 
+{
+    f.open("data.txt",ios::in | ios::out | ios::trunc);
+    if(!f.is_open()) exit(-1);
+}
