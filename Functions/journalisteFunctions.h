@@ -35,6 +35,10 @@ void rechercherJournaliste(Office& o)
 }
 void ajouterJournaliste(Office& o) 
 {
+    fstream f;
+    f.open("Journaliste.txt",ios::in |ios::out | ios::app);
+    if (!f.is_open()) exit -5; 
+    f.seekp(ios::end);
     std::cout<<"\n+++++++++++++++++++Debut Ajout du Journaliste+++++++++++++++++++\n";
     char rep='n';
     do{
@@ -43,14 +47,17 @@ void ajouterJournaliste(Office& o)
         cin>>choix;
         if(choix==1){Journaliste* journ=new Journaliste;
         cin>>*journ;
+        f<<*journ;
         o.tabJournal.push_back(journ);}
         else if (choix ==2) {Journaliste_salarie* journ= new Journaliste_salarie;
         cin>>*journ;
+        f<<*journ;
         o.tabJournal.push_back(journ);
         }
         std::cout<<"\nVoulez Vous saisir encore?: \n";//prompt for more user input
         cin>>rep; //answer input 
         }while(rep=='o' || rep=='O');
+        f.close();
     cout<<"\n++++++++++++++++++++++++Fin Ajout du Journaliste+++++++++++++++++++++++++++++++++++++\n";
 }
 void supprimerJournaliste(Office& o)

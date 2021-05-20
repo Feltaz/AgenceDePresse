@@ -31,15 +31,21 @@ void rechercherMateriel(Office& o)
 }
 void ajouterMateriel(Office& o) 
 {
+    fstream f;
+    f.open("Materiel.txt",ios::in |ios::out | ios::app);
+    if (!f.is_open()) exit -6;
+    f.seekp(ios::end);
     std::cout<<"\n+++++++++++++++++++Debut Ajout Matériel+++++++++++++++++++\n";
     char rep='n';
     do{
         Materiel* mat=new Materiel;
         cin>>*mat;
+        f<<*mat;
         o.tabMateriel.push_back(*mat);
         std::cout<<"\nVoulez Vous saisir encore?: \n";//prompt for more user input
         cin>>rep; //answer input 
         }while(rep=='o' || rep=='O');
+    f.close();
     cout<<"\n++++++++++++++++++++++++Fin Ajout Matériel+++++++++++++++++++++++++++++++++++++\n";
 }
 

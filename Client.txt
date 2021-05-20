@@ -1,0 +1,12 @@
+
+ID du CLient:   123456789
+
+nom et prenom Client: ouerf taz
+
+typeClient: zkejfzf
+
+ID du CLient:   12548
+
+nom et prenom Client: ouerf taz
+
+typeClient: zejkfhze

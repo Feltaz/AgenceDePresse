@@ -1,0 +1,11 @@
+
+titre: titre
+
+theme: theme
+
+date de l'Actualité:
+
+12/12/12
+
+global ou local?
+global

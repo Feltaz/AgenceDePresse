@@ -34,6 +34,10 @@ void rechercherClient(Office& o)
 }
 void ajouterClient(Office& o) 
 {
+    fstream f;
+    f.open("Client.txt",ios::in |ios::out | ios::app);
+    if (!f.is_open()) exit -4; 
+    f.seekp(ios::end);
     std::cout<<"\n+++++++++++++++++++Debut Ajout du client+++++++++++++++++++\n";
     char rep='n';
     do{
@@ -42,14 +46,17 @@ void ajouterClient(Office& o)
         cin>>choix;
         if(choix==1){Client* clt=new Client;
         cin>>*clt;
+        f<<*clt;
         o.tabClient.push_back(clt);}
         else if (choix ==2) {ClientAbo* clt= new ClientAbo;
         cin>>*clt;
+        f<<*clt;
         o.tabClient.push_back(clt);
         }
         std::cout<<"\nVoulez Vous saisir encore?: \n";//prompt for more user input
         cin>>rep; //answer input 
         }while(rep=='o' || rep=='O');
+    f.close();
     cout<<"\n++++++++++++++++++++++++Fin Ajout du Client+++++++++++++++++++++++++++++++++++++\n";
 }
 void supprimerClient(Office& o)

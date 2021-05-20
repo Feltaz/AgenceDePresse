@@ -31,15 +31,21 @@ void rechercherSupport(Office& o)
 }
 void ajouterSupport(Office& o) 
 {
+    fstream f;
+    f.open("Support.txt",ios::in |ios::out | ios::app);
+    if (!f.is_open()) exit -6;
+    f.seekp(ios::end);
     std::cout<<"\n+++++++++++++++++++Debut Ajout Support+++++++++++++++++++\n";
     char rep='n';
     do{
         Support* sup=new Support;
         cin>>*sup;
+        f<<*sup;
         o.tabSupp.push_back(*sup);
         std::cout<<"\nVoulez Vous saisir encore?: \n";//prompt for more user input
         cin>>rep; //answer input 
         }while(rep=='o' || rep=='O');
+    f.close();
     cout<<"\n++++++++++++++++++++++++Fin Ajout Support+++++++++++++++++++++++++++++++++++++\n";
 }
 

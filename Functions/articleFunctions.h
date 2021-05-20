@@ -30,15 +30,21 @@ void rechercherArticle(Office& o)
 }
 void ajouterArticle(Office& o) 
 {
+    fstream f;
+    f.open("Article.txt",ios::in |ios::out | ios::app);
+    if (!f.is_open()) exit -3;
+    f.seekp(ios::end); 
     std::cout<<"\n+++++++++++++++++++Debut Ajout d'Article+++++++++++++++++++\n";
     char rep='n';
     do{
         Article* a=new Article;
         cin>>*a;
+        f<<*a;
         o.tabArti.push_back(*a);
         std::cout<<"\nVoulez Vous saisir encore?: \n";//prompt for more user input
         cin>>rep; //answer input 
         }while(rep=='o' || rep=='O');
+    f.close();
     cout<<"\n++++++++++++++++++++++++Fin Ajout d'Article+++++++++++++++++++++++++++++++++++++\n";
 }
 

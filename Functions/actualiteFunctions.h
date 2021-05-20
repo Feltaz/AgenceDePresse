@@ -37,15 +37,21 @@ void rechercherActualite(Office& o)
 }
 void ajouterActualite(Office& o) 
 {
+    fstream f;
+    f.open("Actualité.txt",ios::in |ios::out | ios::app);
+    f.seekp(ios::end);
+    if (!f.is_open()) exit -2; 
     std::cout<<"\n+++++++++++++++++++Debut Ajout d'Actualité+++++++++++++++++++\n";
     char rep='n';
     do{
         Actualite*a=new Actualite;
         cin>>*a;
+        f<<*a;
         o.tabActu.push_back(*a);
         std::cout<<"\nVoulez Vous saisir encore?: \n";//prompt for more user input
         cin>>rep; //answer input 
         }while(rep=='o' || rep=='O');
+        f.close();
     cout<<"\n++++++++++++++++++++++++Fin Ajout d'Actualité+++++++++++++++++++++++++++++++++++++\n";
 }
 
