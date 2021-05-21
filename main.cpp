@@ -43,7 +43,7 @@ int main(){
                 selected=*i;
                 break;
             }
-        cout<<"\nArticle non trouvée\n";
+        cout<<"\nOffice non trouvée\n";
         }
     menuPrincipal(selected);
     f.close();

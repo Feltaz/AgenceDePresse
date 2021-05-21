@@ -39,6 +39,6 @@ istream& operator>>(istream& in,Support&s)
     in>>s.adresse;
     cout<<"\ntype du support:\n";
     in>>s.typeDeSupport;
-    return in;//commentaire
+    return in;
     
 }

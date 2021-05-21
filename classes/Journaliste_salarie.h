@@ -16,9 +16,9 @@ ostream& operator<<(ostream& out,Journaliste_salarie& js)
     Journaliste* j=&js;
     out<<*j;
     cout<<"\nDate d'embauche :\n";
-    out<<js.dateEmbauche;
+    out<<js.dateEmbauche<<endl;
     cout<<"\nsalaire:\n";
-    out<<js.salaire<<"TND";
+    out<<js.salaire<<"TND\n";
     return out;
 }
 istream& operator>>(istream& in,Journaliste_salarie&js)
